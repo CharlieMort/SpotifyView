@@ -1,4 +1,4 @@
-#Spotify View
+# Spotify View
 
 This is a simple react app which uses the spotify api to see what you're currently playing on spotify.
 
