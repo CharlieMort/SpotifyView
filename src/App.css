@@ -1,38 +1,229 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: Osgiliath;
+  src: url(./Osgiliath-Regular.ttf);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.Player {
+  position: relative;
+  width: 500px;
+  height: 425px;
+  background-color: #ff911a;
+  border-radius: 18px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.AlbumCorner {
+  position: absolute;
+  width: 240px;
+  height: 210px;
+  background-color: #1a1717;
+  border-radius: 18px 125px 125px 125px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.AlbumCover > img {
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+}
+
+.SongCorner {
+  position: absolute;
+  width: 360px;
+  height: 85px;
+  background-color: #1a1717;
+  right: 0;
+  border-radius: 0px 18px 100px 0px;
+}
+
+.SongName {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.SongTitle {
+  font-family: "Osgiliath";
   color: white;
+  margin: 6.5px;
+  font-size: 2.3rem;
 }
 
-.App-link {
-  color: #61dafb;
+.SongArtist {
+  font-family: "Osgiliath";
+  color: white;
+  font-size: 1.25rem;
 }
 
-@keyframes App-logo-spin {
+.MediaControl {
+  position: absolute;
+  right: 20px;
+  top: 95px;
+  background-color: #FF6C10;
+  border-radius: 18px;
+  width: 225px;
+  height: 75px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MediaButton {
+  background: transparent;
+  font-size: 0;
+  border: none;
+  width: 55px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MediaIcon {
+  stroke: white;
+  width: 50x;
+  height: 50px;
+}
+
+.On {
+  stroke: white;
+}
+
+.Off {
+  stroke: #1a1717;
+}
+
+.Cassette {
+  width: 500px;
+  height: 175px;
+  position: absolute;
+  bottom: 0;
+}
+
+.LeftWheel {
+  position: absolute;
+  left: 65px;
+  top: 12px;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  background-color: #FF6C10;
+  animation: spin 2000ms infinite linear;
+}
+
+.Pause {
+  animation-play-state: paused;
+}
+
+@keyframes spin {
   from {
     transform: rotate(0deg);
-  }
-  to {
+  } to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes spinR {
+  from {
+    transform: rotate(360deg);
+  } to {
+    transform: rotate(0deg);
+  }
+}
+
+.InnerWheel {
+  position: absolute;
+  background-color: #FF6C10;
+  border: 2px solid #FFB687;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.SmallWheel {
+  border: 2px solid #FFB687;
+  background-color: #ff911a;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+}
+
+.InnerWheel > .SmallWheel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.SmallCross {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.CrossArmUp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  height: 20px;
+  width: 1px;
+}
+
+.CrossArmAcross {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  height: 1px;
+  width: 20px;
+}
+
+.RightWheel {
+  position: absolute;
+  top: 50%;
+  right: 125px;
+  transform: translate(0, -50%);
+  animation: spinR 2000ms infinite linear;
+}
+
+.RightBlackBox {
+  width: 250px;
+  height: 175px;
+  position: absolute;
+  right: 0;
+  background-color: #1a1717;
+  border-radius: 125px 0px 18px 125px;
+}
+
+.PlayButtons {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.WhiteTriangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 50px 0 50px 86.6px;
+  border-color: transparent transparent transparent #ffffff;
+}
+
+.TapeWrap {
+  border-style: solid;
+  border-width: 100px 10px 100px 1000px;
+  border-color: transparent transparent transparent #ffffff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
